@@ -12,7 +12,7 @@ npm install -g nreplproxy
 
 ### Single file executable
 
-This cross-platform executable depends only on Node.js and doesn't require installing deps.
+Download the [cross-platform executable](https://github.com/chr15m/nreplproxy/releases/latest/download/nreplproxy) which depends only on Node.js and doesn't require installing deps.
 
 ```bash
 wget https://github.com/chr15m/nreplproxy/releases/latest/download/nreplproxy
