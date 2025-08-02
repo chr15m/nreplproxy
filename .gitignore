@@ -1,2 +1,6 @@
 .*.swp
+.tmp-*
+.aider*
+pnpm-lock.yaml
+nreplproxy
 node_modules
