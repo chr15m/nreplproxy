@@ -10,7 +10,9 @@ A simple proxy for debugging nREPL connections. It sits between your nREPL clien
 npm install -g nreplproxy
 ```
 
-### Standalone Executable
+### Single file executable
+
+This cross-platform executable depends only on Node.js and doesn't require installing deps.
 
 ```bash
 wget https://github.com/chr15m/nreplproxy/releases/latest/download/nreplproxy
@@ -22,7 +24,7 @@ chmod 755 nreplproxy
 
 Run `nreplproxy` in your project directory. It finds the `.nrepl-port` file, connects to the nREPL server, and then updates `.nrepl-port` so your client connects to the proxy. All nREPL messages will be logged to standard output. The original `.nrepl-port` file is restored on exit.
 
-## Example Log Output
+## Example log output
 
 A brief example of the log output:
 
