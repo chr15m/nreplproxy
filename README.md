@@ -7,7 +7,11 @@ A simple proxy for debugging nREPL connections. It sits between your nREPL clien
 ### With npm
 
 ```bash
-npm install -g nreplproxy
+npm i nreplproxy
+```
+
+```bash
+npx nreplproxy
 ```
 
 ### Single file executable
