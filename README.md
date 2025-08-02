@@ -26,11 +26,10 @@ Run `nreplproxy` in your project directory. It finds the `.nrepl-port` file, con
 
 ## Example log output
 
-A brief example of the log output:
-
 ```
 nREPL proxy started on port 46289
-Proxying to nREPL server on port 34847
+Proxying to nREPL server on port 1339
+Updating .nrepl-port from 1339 to 46289
 Client connected to proxy.
 
 --- Client -> Server ---
@@ -59,4 +58,24 @@ Client connected to proxy.
     }
   },
 ...
+
+--- Client -> Server ---
+{
+  code: '(inc 1)',
+  column: 1,
+  file: 'shadrepl/core.cljs',
+  id: 'a38d7555-f5e4-41b4-a740-8f288b422e7b',
+  line: 6,
+  'nrepl.middleware.print/stream?': 1,
+  ns: 'shadrepl.core',
+  op: 'eval',
+  session: 'a14147e2-599d-4dc8-801f-a76103a93947'
+}
+
+--- Server -> Client ---
+{
+  id: 'a38d7555-f5e4-41b4-a740-8f288b422e7b',
+  session: 'a14147e2-599d-4dc8-801f-a76103a93947',
+  value: '2'
+}
 ```
