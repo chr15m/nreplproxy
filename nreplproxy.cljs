@@ -37,8 +37,9 @@
 
       (.on js/process "exit"
            (fn []
-             (js/console.log "Restoring .nrepl-port file.")
-             (fs/writeFileSync nrepl-port-file original-port-content)))
+             (let [current-port-content (fs/readFileSync nrepl-port-file "utf8")]
+               (js/console.log (str "Updating .nrepl-port from " current-port-content " to " original-port-content))
+               (fs/writeFileSync nrepl-port-file original-port-content))))
       (.on js/process "SIGINT" #(.exit js/process))
 
       (let [proxy-server
@@ -86,6 +87,7 @@
                    (let [proxy-port (-> proxy-server .address .-port)]
                      (js/console.log (str "nREPL proxy started on port " proxy-port))
                      (js/console.log (str "Proxying to nREPL server on port " target-port))
+                     (js/console.log (str "Updating .nrepl-port from " target-port " to " proxy-port))
                      (fs/writeFileSync nrepl-port-file (str proxy-port)))))))))
 
 (main)
