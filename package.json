@@ -12,8 +12,7 @@
     "cljs-shrinkwrap": "^0.0.7"
   },
   "scripts": {
-    "build": "shrinkwrap nreplproxy.cljs nreplproxy",
-    "test": "cd .github; ./test.sh"
+    "build": "shrinkwrap nreplproxy.cljs nreplproxy"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
