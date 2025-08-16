@@ -26,9 +26,11 @@
             (recur)))))))
 
 (defn- main []
-  (let [nrepl-port-file ".nrepl-port"]
-    (when-not (fs/existsSync nrepl-port-file)
-      (js/console.error "Error: .nrepl-port file not found.")
+  (let [nrepl-port-file (first (filter fs/existsSync
+                                       [".nrepl-port"
+                                        ".shadow-cljs/nrepl.port"]))]
+    (when-not nrepl-port-file
+      (js/console.error "Error: .nrepl-port or .shadow-cljs/nrepl.port file not found.")
       (j/assoc! js/process :exitCode 1)
       (j/call js/process :exit))
 
